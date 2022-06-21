@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Stick+No+Bills:wght@200&display=swap');
+$cardcolor: rgb(159, 218, 241);
+$shadowcolor: rgb(31, 51, 84);
+
+.card-container {
+    font-family: 'Stick No Bills', sans-serif;
+    height: 35rem;
+    width: 20rem;
+    position: relative;
+    background-color: $cardcolor;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgb(31, 51, 84);
+    border-radius: 10px;
+    margin: 3rem;
+    display: grid;
+    grid-template-rows: 60% 10% 7% 22%;
+    grid-template-areas:  "img-section" "name-section" "title-section" "desc-section";
+
+    &:hover {
+        box-shadow: 0 0 20px rgb(159, 218, 241);
+    }
+
+    .img-card-section {
+        grid-area: img-section;
+        overflow: hidden;
+        position: relative;
+
+        .img-card-square {
+            background-color: $cardcolor;
+            height: 25rem;
+            width: 10rem;
+            position: absolute;
+            transform: rotate(75deg);
+            z-index: 1;
+            top: 60%;
+            left: 30%;    
+        }
+    
+        .img-card-style { 
+            position: absolute;   
+            left: 0;   
+            height: 100%;
+            width: 20rem;
+        }
+
+    }
+
+    .name-card-section {
+        grid-area: name-section;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;  
+        z-index: 2; 
+        padding-left: 20px;
+    }
+
+    .title-card-section {
+        grid-area: title-section;
+        font-size: 1.5rem;
+        font-weight: 800;
+        // line-height: 1rem;
+    }
+    .desc-card-section {
+        grid-area: desc-section;
+        font-size: 1rem;
+        font-weight: 600;
+        // line-height: 1rem;
+    }
+
+    .profile-img-card {
+        position: absolute;
+        height: 4.5rem;
+        width: 4.5rem;
+        top: 54%;
+        left: 70%;
+        z-index: 3;
+        border-radius: 50%;
+        box-shadow: 0 0 0 20px $cardcolor;
+        transform: scale(1);
+
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+    }
+
+}
